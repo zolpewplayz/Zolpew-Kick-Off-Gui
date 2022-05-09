@@ -1,0 +1,133 @@
+if game.PlaceId == 318978013 then
+	local ZolpewKIckOffGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local BigKick = Instance.new("TextButton")
+	local Goal = Instance.new("TextButton")
+	local BigKick_2 = Instance.new("TextButton")
+	local CLoseButton = Instance.new("TextButton")
+
+	ZolpewKIckOffGui.Name = "Zolpew KIck Off Gui"
+	ZolpewKIckOffGui.Parent = game.CoreGui
+	ZolpewKIckOffGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = ZolpewKIckOffGui
+	Frame.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+	Frame.BackgroundTransparency = 0.800
+	Frame.BorderColor3 = Color3.fromRGB(243, 0, 4)
+	Frame.BorderSizePixel = 10
+	Frame.Position = UDim2.new(0.326642334, 0, 0.271347255, 0)
+	Frame.Size = UDim2.new(0, 324, 0, 175)
+	Frame.Active = true
+	Frame.Draggable = true
+	Frame.Visible = true
+
+	TextLabel.Parent = Frame
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.Size = UDim2.new(0, 324, 0, 42)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.Text = "Zolpew Kick Off Gui"
+	TextLabel.Visible = true
+	TextLabel.TextColor3 = Color3.fromRGB(10, 41, 241)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+
+	BigKick.Name = "BigKick"
+	BigKick.Parent = Frame
+	BigKick.BackgroundColor3 = Color3.fromRGB(27, 150, 13)
+	BigKick.BackgroundTransparency = 0.600
+	BigKick.Position = UDim2.new(0, 0, 0.314285725, 0)
+	BigKick.Size = UDim2.new(0, 142, 0, 38)
+	BigKick.Font = Enum.Font.SourceSans
+	BigKick.Text = "Big Kick"
+	BigKick.Visible = true
+	BigKick.TextColor3 = Color3.fromRGB(202, 220, 36)
+	BigKick.TextScaled = true
+	BigKick.TextSize = 14.000
+	BigKick.TextWrapped = true
+	BigKick.MouseButton1Down:connect(function()
+
+
+		workspace.MapHolder:GetChildren()[1].BlueGoal.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+		workspace.MapHolder:GetChildren()[1].RedGoal.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+		workspace.SoccerBall.Position = game.Players.LocalPlayer.Character["Right Leg"].Position
+		game.Players.LocalPlayer.Character.Humanoid.Jump = true
+
+	end)
+
+
+	Goal.Name = "Goal"
+	Goal.Parent = Frame
+	Goal.BackgroundColor3 = Color3.fromRGB(27, 150, 13)
+	Goal.BackgroundTransparency = 0.600
+	Goal.Position = UDim2.new(0.493827164, 0, 0.314285725, 0)
+	Goal.Size = UDim2.new(0, 142, 0, 38)
+	Goal.Font = Enum.Font.SourceSans
+	Goal.Text = "Goal"
+	Goal.Visible = true
+	Goal.TextColor3 = Color3.fromRGB(202, 220, 36)
+	Goal.TextScaled = true
+	Goal.TextSize = 14.000
+	Goal.TextWrapped = true
+	Goal.MouseButton1Down:connect(function()
+
+
+		local A_1 = "Kick"
+		local A_2 = "Trickshot"
+		local A_3 = game:GetService("Workspace").SoccerBall
+		local A_4 = 58.777630615234
+		local A_5 = Vector3.new(9.64690495, 82.8000031, -70.1397018)
+		local A_6 = Vector3.new(25.7804337, -56.2313538, -428.990417)
+		local A_7 = Vector3.new(34.4858704, -89.2313538, -492.285004)
+		local Event = game:GetService("ReplicatedStorage").MasterKey
+		Event:FireServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+
+	end)
+
+	BigKick_2.Name = "BigKick"
+	BigKick_2.Parent = Frame
+	BigKick_2.BackgroundColor3 = Color3.fromRGB(27, 150, 13)
+	BigKick_2.BackgroundTransparency = 0.600
+	BigKick_2.Position = UDim2.new(0.225308642, 0, 0.697142839, 0)
+	BigKick_2.Size = UDim2.new(0, 142, 0, 38)
+	BigKick_2.Font = Enum.Font.SourceSans
+	BigKick_2.Text = "More Kick Off GUi (not mine)"
+	BigKick_2.Visible = true
+	BigKick_2.TextColor3 = Color3.fromRGB(202, 220, 36)
+	BigKick_2.TextScaled = true
+	BigKick_2.TextSize = 14.000
+	BigKick_2.TextWrapped = true
+	BigKick_2.MouseButton1Down:connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/KickOff.lua'))()
+	end)
+
+	CLoseButton.Name = "CLoseButton"
+	CLoseButton.Parent = ZolpewKIckOffGui
+	CLoseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+	CLoseButton.Position = UDim2.new(0.610401452, 0, 0.256166995, 0)
+	CLoseButton.Size = UDim2.new(0, 20, 0, 28)
+	CLoseButton.Font = Enum.Font.SourceSans
+	CLoseButton.Text = "Close"
+	CLoseButton.Visible = true
+	CLoseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	CLoseButton.TextScaled = true
+	CLoseButton.TextSize = 14.000
+	CLoseButton.TextWrapped = true
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Frame.Visible = false
+	end)
+	
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Kick Off Gui";
+		Text = "Made by Ro-viral and zolpew playz"; -- what the text says (ofc)
+		Duration = 120;
+	})
+	wait(1)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Subscribe To both";
+		Text = "Now!"; -- what the text says (ofc)
+		Duration = 25;
+	})
+end
